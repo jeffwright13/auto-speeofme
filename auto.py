@@ -14,20 +14,20 @@ def main():
     ffprofile.add_extension(ublock)
     
     # Launch browser using Selenium driver
-    print "Launching broswer..."
+    print "Launching browser..."
     browser = webdriver.Firefox()
     print "Getting URL..."
     browser.get(base_url)
     print "Asserting title..."
     assert title in browser.title
-    print "Sleeping..."
-    time.sleep(5)
-    
-    # Close all browser windows
-    for window in browser.window_handles:
-        browser.switch_to_window(window)
-        browser.close()
 
+    # LOOP
+    while (1):
+        print "Running test..."
+        browser.find_element_by_id("btnStart").click()
+        print "Sleeping..."
+        time.sleep(120)
+    
 if __name__ == '__main__':
     main()
 
