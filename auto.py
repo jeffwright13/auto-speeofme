@@ -3,6 +3,7 @@
 def main():
     import time
     from selenium import webdriver
+    counter = 1
     
     # Runtime variables
     base_url = "http://speedof.me"
@@ -23,11 +24,11 @@ def main():
 
     # LOOP
     while (1):
-        print "Running test..."
+        print "Running test #" + str(counter) + "..."
         browser.find_element_by_id("btnStart").click()
         print "Sleeping..."
         time.sleep(120)
+        counter += 1
     
 if __name__ == '__main__':
     main()
-
